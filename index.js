@@ -87,7 +87,7 @@ Use the addFlavor function below to do the following:
 
   For example: addFlavor(originalFlavors, "Rainbow Sherbert") should return the array ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla Burnt Almond"]
 */
-
+console.log('Task 3: addFlavor');
 
 function addFlavor(arrFlavors, strFlav){
   const flavors = arrFlavors;
@@ -109,7 +109,7 @@ Use the removeLastFlavor function below to do the following:
 
   For example: running removeLastFlavor(originalFlavors) would return ["Rainbow Sherbert", "Banana Nut Fudge",..."Vanilla"]
 */
-
+console.log('Task 4: removeLastFlavor');
 
 function removeLastFlavor(arrFlavors){
  const flavorArray = arrFlavors
@@ -131,7 +131,7 @@ Use the getFlavorByIndex function below to do the following:
 
   For example: running getFlavorByIndex(originalFlavors, 2) would return "Black Walnut", assuming Rainbow Sherbert has been added successfully
 */
-
+console.log('Task 5: getFlavorByIndex');
 
 function getFlavorByIndex(arrFlavors, flavIndex){
   return arrFlavors[flavIndex];
@@ -152,12 +152,14 @@ Use the removeFlavorByName function below to do the following:
 
   HINT: You can use .splice() for this
 */
+console.log('Task6: removeFlavorByName');
 
-function removeFlavorByName(/*your code here*/){
-  /*your code here*/
+function removeFlavorByName(arrFlavors, strFlav){
+  arrFlavors.splice(arrFlavors.indexOf(strFlav),1);
+  return arrFlavors;
 }
 
-
+console.log(removeFlavorByName(origCopy, 'Rocky Road'));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 July 7th is "World Chocolate Day" and Baskin Robins wants to create promotional materials highlighting all of their chocolate flavors. 
@@ -176,13 +178,19 @@ Use the filterByWord function below to do the following:
 
   DO NOT USE ADVANCED ARRAY METHODS (i.e. .filter) to solve this problem. 
 */
+console.log('Task 7: filterByWord')
 
-
-function filterByWord(/*your code here*/){
-  /*your code here*/
+function filterByWord(arrFlavors, strKeyword){
+  const filteredArray = [];
+  for (let i = 0; i < arrFlavors.length ; i++){
+    if (arrFlavors[i].includes(strKeyword)){
+      filteredArray.push(arrFlavors[i]);
+    }
+  }
+  return filteredArray;
 }
 
-
+console.log(filterByWord(origCopy, 'Chocolate'));
 
 /* 💪💪💪💪💪🧁🍦🍨 STRETCH 🍨🍦🍫💪💪💪💪💪*/ 
 
