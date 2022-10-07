@@ -44,11 +44,17 @@ Use the copy function below to do the following:
   1. receive an array as a parameter - you will pass in originalFlavors as an argument when the function is invoked.
   2. Return a copy of the received array  
 */
+console.log('Task 1: Copy the array');
 
 
-function copy(/*your code here*/){
-  /*your code here*/
+function copy(receivedArray){
+  const copiedArray = receivedArray.slice();
+  return copiedArray;
+
 }
+
+const origCopy = copy(originalFlavors);
+console.log(origCopy);
 
 
 
@@ -61,12 +67,13 @@ Confirm that an array is exactly 31 flavors. Your function should accept:
 
 For Example: is31Flavors(originalFlavors) will return true if your code is working properly
 */
+console.log('Task 2: is31Flavors');
 
-
-function is31Flavors(/*your code here*/){
-  /*your code here*/
+function is31Flavors(arrFlavors){
+  const theseFlavors = arrFlavors
+  return theseFlavors.length === 31;
  }
-
+console.log(is31Flavors(origCopy));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
@@ -82,11 +89,15 @@ Use the addFlavor function below to do the following:
 */
 
 
-function addFlavor(/*your code here*/){
-  /*your code here*/
+function addFlavor(arrFlavors, strFlav){
+  const flavors = arrFlavors;
+  const newFlavor = strFlav;
+  flavors.unshift(newFlavor);
+  return flavors;
  }
 
-
+console.log(addFlavor(origCopy, 'Rainbow Sherbert'));
+console.log(is31Flavors(origCopy));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Houston, we have a problem! There are now 32 flavors in the originalFlavors array! Your task is to remove an item from the end of the array. 
@@ -100,9 +111,13 @@ Use the removeLastFlavor function below to do the following:
 */
 
 
-function removeLastFlavor(/*your code here*/){
- /*your code here*/
+function removeLastFlavor(arrFlavors){
+ const flavorArray = arrFlavors
+ flavorArray.splice(flavorArray.length - 1,1);
+ return flavorArray;
 }
+console.log(removeLastFlavor(origCopy));
+console.log(is31Flavors(origCopy));
 
 
 
@@ -118,11 +133,11 @@ Use the getFlavorByIndex function below to do the following:
 */
 
 
-function getFlavorByIndex(/*your code here*/){
-  /*your code here*/
+function getFlavorByIndex(arrFlavors, flavIndex){
+  return arrFlavors[flavIndex];
 }
 
-
+console.log(getFlavorByIndex(origCopy, 2));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 As corporate wants to add more and more flavors to their lineup, they've realized that they need to remove flavors based on flavor name, as opposed to just arbitrarily removing the first or last flavor. Your task is to get an index by flavor name, and remove that single flavor from the array.  
