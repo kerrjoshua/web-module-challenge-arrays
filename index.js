@@ -203,10 +203,26 @@ Use the getAverageWordLength function below to do the following:
 
   For example: getAverageWordLength(originalFlavors) should return a number between 0 and 3.     
 */
+console.log('Stretch 1: averageWordLength')
 
-function getAverageWordLength(/*code here*/){
-  /*code here*/
+function getAverageWordLength(arrOfStrings){
+  
+  let counter = arrOfStrings.length;  
+  let avgWords = 0
+  for (let i = 0; i < arrOfStrings.length; i++){
+    let currentString = arrOfStrings[i];
+    for (let j = 0; j < currentString.length; j++){      
+      if (currentString[j].includes(' ')){
+        counter++;
+      }
+    }
+  }
+avgWords = counter / arrOfStrings.length;
+return avgWords;
 }
+
+const testArray = ['hello', 'hello world']
+console.log(getAverageWordLength(testArray));
 
 
 /* 💪💪💪💪💪💪💪💪💪💪 STRETCH 2: 💪💪💪💪💪💪💪💪💪
